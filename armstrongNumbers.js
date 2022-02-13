@@ -1,9 +1,25 @@
 function printArmstrongNum(number)
 {
-for (let i=1; i<=number;i++){
-    if(isArmstrong(i))
-    console.log(i)
+    if(typeof (number)!=='number'|| number %1!=0)
+    {
+        return "invalid input"
+    }
+    if( number<0){
+        return "invalid input"
+    }
+    if(number >32767){
+        return "invalid input"
+    }
+    let armstrongArr= []
+for (let index=1; index<=number;index++){
+    if(isArmstrong(index))
+    {
+        armstrongArr.push(index)
+
+    }
 }
+return armstrongArr
+
 }
 function isArmstrong(number)
 {
@@ -20,3 +36,8 @@ return sum==number
 }
 printArmstrongNum(200)
         
+module.exports={
+    printArmstrongNum,
+    isArmstrong
+} 
+ 
